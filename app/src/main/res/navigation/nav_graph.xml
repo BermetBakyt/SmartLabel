@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/userMainFragment">
+
+    <fragment
+        android:id="@+id/userMainFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.main_page.AppMainFragment"
+        android:label="fragment_user_main"
+        tools:layout="@layout/fragment_app_main" >
+        <action
+            android:id="@+id/action_userMainFragment_to_productScannerFragment"
+            app:destination="@id/productScannerFragment" />
+        <action
+            android:id="@+id/action_userMainFragment_to_producerRegisterFragment"
+            app:destination="@id/producerRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productScannerFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.user.scanning_fragment.ProductScannerFragment"
+        android:label="fragment_product_scanner"
+        tools:layout="@layout/fragment_product_scanner" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_productScannerFragment_to_productDetailsFragment"
+            app:destination="@id/productDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/producerRegisterFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.producer_register.ProducerRegisterFragment"
+        android:label="fragment_producer_register"
+        tools:layout="@layout/fragment_producer_register" >
+        <action
+            android:id="@+id/action_producerRegisterFragment_to_producerProductListFragment"
+            app:destination="@id/producerProductListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailsFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.user.product_detail.ProductDetailsFragment"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <action
+            android:id="@+id/action_productDetailsFragment_to_userMainFragment"
+            app:destination="@id/userMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/producerProductListFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.list.ProducerProductListFragment"
+        android:label="fragment_producer_product_list"
+        tools:layout="@layout/fragment_producer_product_list" >
+        <action
+            android:id="@+id/action_producerProductListFragment_to_addNewProductCardFragment"
+            app:destination="@id/addNewProductCardFragment" />
+        <action
+            android:id="@+id/action_producerProductListFragment_to_updateProductCardFragment"
+            app:destination="@id/updateProductCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewProductCardFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.add.AddNewProductCardFragment"
+        android:label="fragment_add_new_product_card"
+        tools:layout="@layout/fragment_add_new_product_card" />
+    <fragment
+        android:id="@+id/updateProductCardFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.update.UpdateProductCardFragment"
+        android:label="fragment_update_product_card"
+        tools:layout="@layout/fragment_update_product_card" />
+</navigation>
