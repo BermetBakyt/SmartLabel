@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_productDetailsFragment_to_userMainFragment"
             app:destination="@id/userMainFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/producerProductListFragment"

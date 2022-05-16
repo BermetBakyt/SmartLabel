@@ -2,34 +2,5 @@
 
 <resources>
 
-    <style name="BaseRootStyle">
-        <item name="android:background">@color/GreyishGreen</item>
-        <item name="windowActionBar">false</item>
-    </style>
-
-    <style name="BaseProgressBar">
-        <item name="android:indeterminateTint">@color/White</item>
-        <item name="android:visibility">gone</item>
-    </style>
-
-    <style name="BaseItemMaterialCardView">
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:foreground">?selectableItemBackground</item>
-        <item name="cardBackgroundColor">@color/Yellow</item>
-        <item name="cardCornerRadius">10dp</item>
-        <item name="cardElevation">10dp</item>
-    </style>
-
-    <style name="TextItemSubtitle">
-        <item name="android:layout_marginTop">12dp</item>
-        <item name="android:textColor">@color/ChineseBlack</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
-    <style name="TextItemEpisodeDescription">
-        <item name="android:layout_marginTop">4dp</item>
-        <item name="android:textColor">@color/White</item>
-        <item name="android:textSize">18sp</item>
-    </style>
 
 </resources>

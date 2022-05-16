@@ -5,6 +5,30 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.fragments.main_page.AppMainFragment">
 
+    <TextView
+        android:id="@+id/greeting_tv"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="70dp"
+        android:textSize="24sp"
+        android:textColor="@color/Black"
+        android:textAlignment="center"
+        android:text="Добро пожаловать в Smart Labelling!" />
+
+    <TextView
+        android:id="@+id/choose_tv"
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="300dp"
+        android:textSize="24sp"
+        android:textColor="@color/Black"
+        android:textAlignment="center"
+        android:text="Выберите способ входа: " />
+
     <Button
         android:id="@+id/btn_user_in"
         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -14,7 +38,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="150dp"
         android:backgroundTint="@color/Green"
-        android:text="Text button" />
+        android:textColor="@color/Black"
+        android:text="Пользователь" />
 
     <Button
         android:id="@+id/btn_producer_in"
@@ -23,6 +48,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/Green"
-        android:text="Text button" />
+        android:text="Производитель"
+        android:textColor="@color/Black"
+        android:layout_marginTop="80dp"/>
 
 </FrameLayout>

@@ -1,7 +1,20 @@
 package com.example.smartlabelling.presentation.ui.fragments.user.product_detail
 
 import androidx.lifecycle.ViewModel
+import com.example.smartlabelling.domain.use_cases.FetchProductByQRUseCase
+import com.example.smartlabelling.presentation.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class ProductDetailsViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+@HiltViewModel
+class ProductDetailsViewModel @Inject constructor(
+    private val fetchProductByIdUseCase: FetchProductByQRUseCase
+) : BaseViewModel() {
+
+    private val _productDetailState = MutableUIStateFlow<>()
+    val productDetailState = _productDetailState.asStateFlow()
+
+    fun fetchProductById(id: Int) {
+        fetchProductByIdUseCase(id).collectRequest(_productDetailState) { it.toProductUI() }
+    }
 }
