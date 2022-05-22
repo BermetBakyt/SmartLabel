@@ -24,8 +24,6 @@ class RetrofitClient @Inject constructor() {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun provideCharacterApiService(): ProductServiceApi = provideRetrofit
+    fun provideproductApiService(): ProductServiceApi = provideRetrofit
         .create(ProductServiceApi::class.java)
 }
-
-const val BASE_URL = ""

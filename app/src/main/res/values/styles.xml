@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+    //Base progress bar
+    <style name="BaseProgressBar">
+        <item name="android:indeterminateTint">@color/White</item>
+        <item name="android:visibility">gone</item>
+    </style>
 
-
+    //Base Item Material Card View
+    <style name="BaseItemMaterialCardView">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:foreground">?selectableItemBackground</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardElevation">10dp</item>
+    </style>
 </resources>

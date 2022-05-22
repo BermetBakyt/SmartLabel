@@ -1,4 +1,4 @@
-package com.example.smartlabelling.presentation.ui.fragments.producer.product.list
+package com.example.smartlabelling.presentation.ui.fragments.producer.producer_sign_in
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.smartlabelling.R
 
-class ProducerProductListFragment : Fragment() {
+class ProducerSignInFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ProducerProductListFragment()
+        fun newInstance() = ProducerSignInFragment()
     }
 
-    private lateinit var viewModel: ProducerProductListViewModel
+    private lateinit var viewModel: ProducerSignInViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_producer_product_list, container, false)
+        return inflater.inflate(R.layout.fragment_producer_login, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProducerProductListViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ProducerSignInViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

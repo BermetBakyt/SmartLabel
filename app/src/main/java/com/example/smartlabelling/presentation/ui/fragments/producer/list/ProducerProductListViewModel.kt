@@ -1,4 +1,4 @@
-package com.example.smartlabelling.presentation.ui.fragments.producer.product.list
+package com.example.smartlabelling.presentation.ui.fragments.producer.list
 
 import androidx.lifecycle.ViewModel
 

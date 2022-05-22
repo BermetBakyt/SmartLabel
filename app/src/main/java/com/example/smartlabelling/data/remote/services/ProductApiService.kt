@@ -1,12 +1,14 @@
 package com.example.smartlabelling.data.remote.services
 
+import com.example.smartlabelling.data.remote.dto.ProductApiResponse
+import com.example.smartlabelling.data.remote.dto.ProductDto
 import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ProductServiceApi {
-//    @GET("")
-//    suspend fun fetchCharacter(@Path("id") id: Int): //Dto
-//
-//    @GET("")
-//    suspend fun fetchAllCharacters() : //RickAndMortyResponse<Dto>
+    @GET("")
+    suspend fun fetchProduct(@Path("id") id: Int): ProductDto
+
+    @GET("")
+    suspend fun fetchProducts() : ProductApiResponse<ProductDto>
 }

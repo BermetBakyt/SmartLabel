@@ -1,4 +1,4 @@
-package com.example.smartlabelling.presentation.ui.fragments.producer.product.add
+package com.example.smartlabelling.presentation.ui.fragments.producer.list
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,24 +8,24 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.smartlabelling.R
 
-class AddNewProductCardFragment : Fragment() {
+class ProducerProductListFragment : Fragment() {
 
     companion object {
-        fun newInstance() = AddNewProductCardFragment()
+        fun newInstance() = ProducerProductListFragment()
     }
 
-    private lateinit var viewModel: AddNewProductCardViewModel
+    private lateinit var viewModel: ProducerProductListViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_add_new_product_card, container, false)
+        return inflater.inflate(R.layout.fragment_producer_product_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AddNewProductCardViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ProducerProductListViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

@@ -3,11 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.producer.product.list.ProducerProductListFragment">
+    tools:context=".presentation.ui.fragments.producer.list.ProducerProductListFragment">
 
-    <TextView
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        style="@style/BaseProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_active_products"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
-
+        tools:listitem="@layout/item_recycler_product" />
 </FrameLayout>

@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">SmartLabelling</string>
+    <string name="help_txt">Help</string>
+    <string name="policy">Privacy Policy</string>
+    <string name="app_info">App Info</string>
+    <string name="btn_scan">Сканировать</string>
+    <string name="sample_txt">Sample Text</string>
+
+    //register\login fragment
+    <string name="txt_login_fr">ВХОД</string>
+    <string name="txt_register_fr">РЕГИСТРАЦИЯ</string>
+    <string name="txt_layout_email">Почтовый адрес</string>
+    <string name="txt_email_edit_text">Пароль</string>
+    <string name="txt_forgot_password">Забыли пароль?</string>
+    <string name="btn_login">Войти</string>
+    <string name="txt_or">или</string>
+    <string name="txt_company_name_edit_text">Название компании</string>
+    <string name="btn_sign_up">Зарегистрироваться</string>
+    <string name="btn_login_with_google">Войти через Google</string>
 </resources>

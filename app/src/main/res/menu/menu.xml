@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_item_policy"
+        android:enabled="true"
+        android:title="@string/policy"
+        android:visible="true" />
+
+    <item android:id="@+id/menu_item_info"
+        android:title="@string/app_info"
+        android:enabled="true"
+        android:visible="true" />
+
+    <item android:id="@+id/menu_item_help"
+        android:title="@string/help_txt"
+        android:enabled="true"
+        android:visible="true" />
+</menu>

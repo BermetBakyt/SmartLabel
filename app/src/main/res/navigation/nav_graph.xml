@@ -31,9 +31,9 @@
     </fragment>
     <fragment
         android:id="@+id/producerRegisterFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.producer_register.ProducerRegisterFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment"
         android:label="fragment_producer_register"
-        tools:layout="@layout/fragment_producer_register" >
+        tools:layout="@layout/fragment_producer_login" >
         <action
             android:id="@+id/action_producerRegisterFragment_to_producerProductListFragment"
             app:destination="@id/producerProductListFragment" />
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/producerProductListFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.list.ProducerProductListFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.list.ProducerProductListFragment"
         android:label="fragment_producer_product_list"
         tools:layout="@layout/fragment_producer_product_list" >
         <action
@@ -64,12 +64,12 @@
     </fragment>
     <fragment
         android:id="@+id/addNewProductCardFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.add.AddNewProductCardFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.add.AddNewProductCardFragment"
         android:label="fragment_add_new_product_card"
         tools:layout="@layout/fragment_add_new_product_card" />
     <fragment
         android:id="@+id/updateProductCardFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.product.update.UpdateProductCardFragment"
+        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.update.UpdateProductCardFragment"
         android:label="fragment_update_product_card"
         tools:layout="@layout/fragment_update_product_card" />
 </navigation>

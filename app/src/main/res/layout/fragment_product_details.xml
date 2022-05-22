@@ -1,172 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    style="@style/Theme.Material3.Light.NoActionBar">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:id="@+id/product_data_loader"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:indeterminate="true"
-        android:visibility="gone"
-        app:indicatorColor="@color/purple_200"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="parent"/>
+        tools:layout_editor_absoluteX="95dp"
+        tools:layout_editor_absoluteY="168dp">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/product_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@id/tv_name"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/product_data_loader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:indicatorColor="@color/purple_200"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintTop_toBottomOf="@id/product_image"
-        app:layout_constraintBottom_toTopOf="@id/tv_product_type"
-        />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/product_image"
+            android:layout_width="197dp"
+            android:layout_height="182dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
-    <TextView
-        android:id="@+id/tv_product_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginEnd="60dp"
-        tools:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name"
-        app:layout_constraintBottom_toTopOf="@id/tv_ingredients"/>
+        <TextView
+            android:id="@+id/tv_name_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginEnd="150dp"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_product_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_image"
+            tools:text="Product name:" />
+
+        <TextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_product_type"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_field"
+            tools:text="name" />
+
+        <TextView
+            android:id="@+id/tv_product_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.473"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="369dp"
+            tools:text="Product type:" />
+
+        <TextView
+            android:id="@+id/tv_product_type_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_ingredients"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_type"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="type" />
 
 
-    <TextView
-        android:id="@+id/tv_ingredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        android:textColor="@color/white"
-        tools:text="TextView"
-        android:layout_gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_product_type"
-        app:layout_constraintBottom_toTopOf="@id/tv_size_volume"/>
+        <TextView
+            android:id="@+id/tv_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            app:layout_constraintBottom_toTopOf="@id/tv_ingredients_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.466"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_product_type_field"
+            app:layout_constraintVertical_bias="0.769"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Ингредиенты: " />
 
+        <TextView
+            android:id="@+id/tv_ingredients_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_size_volume"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.458"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredients"
+            app:layout_constraintVertical_bias="0.808"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="ingredients" />
 
-    <TextView
-        android:id="@+id/tv_size_volume"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        android:layout_gravity="center_vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_ingredients"
-        app:layout_constraintBottom_toTopOf="@id/tv_production_date"/>
+        <TextView
+            android:id="@+id/tv_size_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_ingredients_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_size_volume_field"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Вес: " />
 
-    <TextView
-        android:id="@+id/tv_production_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_size_volume"
-        app:layout_constraintBottom_toBottomOf="@id/tv_expiry_date"/>
+        <TextView
+            android:id="@+id/tv_size_volume_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_production_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_ingredients"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="size" />
 
-    <TextView
-        android:id="@+id/tv_expiry_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_production_date"
-        app:layout_constraintBottom_toBottomOf="@id/tv_nutrition_declaration"/>
+        <TextView
+            android:id="@+id/tv_production_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_production_date_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_size_volume_field"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="TextView" />
 
-    <TextView
-        android:id="@+id/tv_nutrition_declaration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_expiry_date"
-        app:layout_constraintBottom_toBottomOf="@id/tv_manifacturer_country"/>
+        <TextView
+            android:id="@+id/tv_production_date_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_expiry_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.576"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_production_date"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="production" />
 
-    <TextView
-        android:id="@+id/tv_manifacturer_country"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nutrition_declaration"
-        app:layout_constraintBottom_toBottomOf="@id/tv_consumption_restrictions"/>
+        <TextView
+            android:id="@+id/tv_expiry_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_expiry_date_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_production_date_field"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Срок годности: " />
 
-    <TextView
-        android:id="@+id/tv_consumption_restrictions"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="60dp"
-        tools:text="TextView"
-        android:textColor="@color/white"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_manifacturer_country"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/tv_expiry_date_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_expiry_date"
+            app:layout_constraintBottom_toTopOf="@id/tv_nutrition_declaration"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="expiry date" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/group_product_detail"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:constraint_referenced_ids="tv_name, tv_consumption_restrictions, tv_expiry_date, tv_ingredients,
-        tv_production_date, tv_nutrition_declaration, tv_size_volume, tv_product_type, product_data_loader"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_nutrition_declaration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_nutrition_declaration_field"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.631"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_expiry_date_field"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_nutrition_declaration_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_manifacturer_country"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.631"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_expiry_date_field"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_manifacturer_country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/grey"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_consumption_restrictions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.658"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nutrition_declaration"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_manifacturer_country_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tv_consumption_restrictions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.658"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nutrition_declaration"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="TextView" />
+
+        <TextView
+            android:id="@+id/tv_consumption_restrictions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_manifacturer_country"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Меры предосторожности: " />
+
+        <TextView
+            android:id="@+id/tv_consumption_restrictions_field"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/btn_scan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_consumption_restrictions"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="restrictions" />
+
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="@string/btn_scan"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_product_detail"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:constraint_referenced_ids="product_image, " />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

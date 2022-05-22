@@ -37,8 +37,8 @@
         android:layout_margin="100dp"
         android:layout_gravity="center"
         android:layout_marginTop="150dp"
-        android:backgroundTint="@color/Green"
-        android:textColor="@color/Black"
+        android:backgroundTint="@color/Black"
+        android:textColor="@color/White"
         android:text="Пользователь" />
 
     <Button
@@ -47,9 +47,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:backgroundTint="@color/Green"
+        android:backgroundTint="@color/Black"
         android:text="Производитель"
-        android:textColor="@color/Black"
+        android:textColor="@color/White"
         android:layout_marginTop="80dp"/>
 
 </FrameLayout>
