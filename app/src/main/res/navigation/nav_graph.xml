@@ -71,5 +71,9 @@
         android:id="@+id/updateProductCardFragment"
         android:name="com.example.smartlabelling.presentation.ui.fragments.producer.update.UpdateProductCardFragment"
         android:label="fragment_update_product_card"
-        tools:layout="@layout/fragment_update_product_card" />
+        tools:layout="@layout/fragment_update_product_card" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>

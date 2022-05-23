@@ -6,27 +6,74 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewbinding.ViewBinding
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.smartlabelling.R
+import com.example.smartlabelling.databinding.FragmentProducerProductListBinding
+import com.example.smartlabelling.presentation.adapters.ProductsAdapter
+import com.example.smartlabelling.presentation.base.BaseFragment
+import com.example.smartlabelling.presentation.ui.extensions.showToastShort
+import dagger.hilt.android.AndroidEntryPoint
 
-class ProducerProductListFragment : Fragment() {
+@AndroidEntryPoint
+class ProducerProductListFragment : BaseFragment<ProducerProductListViewModel, FragmentProducerProductListBinding>(
+    R.layout.fragment_producer_product_list
+) {
+    override val viewModel: ProducerProductListViewModel by activityViewModels()
+    override val binding by viewBinding(FragmentProducerProductListBinding::bind)
 
-    companion object {
-        fun newInstance() = ProducerProductListFragment()
+    private val productsAdapter = ProductsAdapter(
+        this::onItemClick,
+        this::onAddNewClicked,
+    )
+//    private val productsAdapter: ProductsAdapter by lazy {
+//        ProductsAdapter { id ->
+//            findNavController().navigate(ProducerProductListFragmentDirections.actionProducerProductListFragmentToUpdateProductCardFragment(id))
+//        }
+//    }
+
+    override fun initialize() {
+        setupListAdapter()
     }
 
-    private lateinit var viewModel: ProducerProductListViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_producer_product_list, container, false)
+    private fun setupListAdapter() = with(binding.recyclerActiveProducts) {
+        this.adapter = productsAdapter
+        layoutManager = LinearLayoutManager(context)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProducerProductListViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun setupRequests() {
+        viewModel.fetchProducts()
     }
 
+    override fun setupSubscribers() {
+        subscribeToProductsState()
+    }
+
+    private fun onAddNewClicked() {
+        findNavController().navigate(
+            ProducerProductListFragmentDirections.actionProducerProductListFragmentToAddNewProductCardFragment()
+        )
+    }
+
+    private fun onItemClick(id: Int) {
+        findNavController().navigate(
+            ProducerProductListFragmentDirections.actionProducerProductListFragmentToUpdateProductCardFragment(
+                id= id)
+        )
+    }
+
+    private fun subscribeToProductsState() = with(binding) {
+        viewModel.productsListState.collectUIState(
+            onError = {
+                showToastShort(it)
+            },
+            onSuccess = {
+                productsAdapter.submitList(it)
+            }
+        )
+    }
 }

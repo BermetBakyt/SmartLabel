@@ -1,5 +1,9 @@
-package com.example.smartlabelling.data.remote.dto
 
+import com.example.smartlabelling.data.remote.dto.ConsumptionInfoDto
+import com.example.smartlabelling.data.remote.dto.NutritionDeclarationDto
+import com.example.smartlabelling.data.remote.dto.toConsumptionInfo
+import com.example.smartlabelling.data.remote.dto.toNutritionDeclaration
+import com.example.smartlabelling.domain.models.Product
 import com.google.gson.annotations.SerializedName
 
 class ProductDto(
@@ -25,4 +29,18 @@ class ProductDto(
     val nutritionDeclarationDto: NutritionDeclarationDto,
     @SerializedName("consumption_info")
     val consumptionInfo: ConsumptionInfoDto,
+)
+
+fun ProductDto.toProduct() = Product(
+    id,
+    productName,
+    productionDate,
+    expiryDate,
+    manifacturerCountry,
+    ingredients,
+    category,
+    packagingSize,
+    seriesNumber,
+    nutritionDeclarationDto.toNutritionDeclaration(),
+    consumptionInfo.toConsumptionInfo(),
 )

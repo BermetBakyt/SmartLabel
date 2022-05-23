@@ -1,5 +1,6 @@
 package com.example.smartlabelling.data.remote.dto
 
+import com.example.smartlabelling.domain.models.NutritionDeclaration
 import com.google.gson.annotations.SerializedName
 
 class NutritionDeclarationDto(
@@ -13,4 +14,8 @@ class NutritionDeclarationDto(
     val sugar: Int,
     @SerializedName("salt")
     val salt: Int,
+)
+
+fun NutritionDeclarationDto.toNutritionDeclaration() = NutritionDeclaration(
+    energy, fats, proteins, sugar, salt
 )

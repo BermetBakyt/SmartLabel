@@ -1,5 +1,6 @@
 package com.example.smartlabelling.data.remote
 
+import com.example.smartlabelling.BuildConfig.BASE_URL
 import com.example.smartlabelling.data.remote.interceptors.LoggingInterceptor
 import com.example.smartlabelling.data.remote.services.ProductServiceApi
 import okhttp3.OkHttpClient

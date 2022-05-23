@@ -4,23 +4,41 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.example.smartlabelling.databinding.ItemRecyclerProductBinding
 import com.example.smartlabelling.presentation.base.BaseDiffUtilCallback
 import com.example.smartlabelling.presentation.ui.models.ProductUI
 
 class ProductsAdapter(
+    val onItemClick: (id: Int) -> Unit,
+    val onAddNewClicked: () -> Unit,
     private val action: (id: Int) -> Unit
-) : ListAdapter<ProductUI, ProductsAdapter.ProductViewHolder>(BaseDiffUtilCallback()){
+) : ListAdapter<ProductUI, ProductsAdapter.ProductViewHolder>(BaseDiffUtilCallback()) {
 
     inner class ProductViewHolder(
         private val binding: ItemRecyclerProductBinding
     ): RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            with(binding) {
+
+                root.setOnClickListener{
+                    with(getItem(absoluteAdapterPosition)!!) {
+                        onItemClick(id)
+                    }
+                }
+
+                root.setOnClickListener {
+                    onAddNewClicked()
+                }
+            }
+        }
+
         fun bind(item: ProductUI) {
             binding.apply {
-                itemProductName.text = item.name
-                itemProductSeriesNumber.text = item.series
-                //load image by coil
+                itemProductName.text = item.productName
+                itemProductSeriesNumber.text = item.seriesNumber.toString()
+                imageItemProduct.load(imageItemProduct)
             }
 
             itemView.setOnClickListener{

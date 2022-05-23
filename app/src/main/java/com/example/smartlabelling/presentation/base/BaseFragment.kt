@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.Group
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.example.smartlabelling.presentation.ui.state.UIState
@@ -30,16 +31,18 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
         setupRequests()
         setupSubscribers()
     }
+
     protected open fun initialize() {
     }
+
     protected open fun setupListeners() {
     }
+
     protected open fun setupRequests() {
     }
+
     protected open fun setupSubscribers() {
     }
-
-    //collect flow safely with repeatingLifecycle API
 
     private fun collectFlowSafely(
         lifecycleState: Lifecycle.State,
@@ -52,18 +55,12 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
         }
     }
 
-    //collect UIState with collectFlowSafely
     protected fun <T> StateFlow<UIState<T>>.collectUIState(
         lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
         collector: FlowCollector<UIState<T>>
     ) {
-        collectFlowSafely(lifecycleState) {this.collect(collector)}
+        collectFlowSafely(lifecycleState) { this.collect(collector) }
     }
-
-    //collect UIState with collectFlowSafely and optional states params
-    //@param allStates for working with all states
-    //@param onError for error handling
-    //@param onSuccess for working with data
 
     protected fun <T> StateFlow<UIState<T>>.collectUIState(
         lifecycleState: Lifecycle.State = Lifecycle.State.STARTED,
@@ -72,7 +69,7 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
         onSuccess: ((data: T) -> Unit)
     ) {
         collectFlowSafely(lifecycleState) {
-            this.collect{
+            this.collect {
                 allStates?.invoke(it)
                 when (it) {
                     is UIState.Idle -> {}
@@ -83,10 +80,6 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
             }
         }
     }
-
-    //setup views visibility depending on UIState states.
-    //@param isNavigateWhenSuccess is responsible for
-    // displaying views depending on whether to navigate further or stay this Fragment
 
     protected fun <T> UIState<T>.setupViewVisibility(
         group: Group, loader: CircularProgressIndicator, isNavigateWhenSuccess: Boolean = false
@@ -104,3 +97,4 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
         }
     }
 }
+
