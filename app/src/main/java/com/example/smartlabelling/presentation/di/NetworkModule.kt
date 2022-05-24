@@ -13,7 +13,7 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideCharacterApiService(
+    fun provideProductApiService(
         networkClient: RetrofitClient
-    ) = networkClient.provideCharacterApiService()
+    ) = networkClient.provideproductApiService()
 }

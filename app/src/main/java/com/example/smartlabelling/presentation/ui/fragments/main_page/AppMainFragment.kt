@@ -6,27 +6,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.smartlabelling.R
+import com.example.smartlabelling.databinding.FragmentAboutAppBinding
+import com.example.smartlabelling.databinding.FragmentAppMainBinding
+import com.example.smartlabelling.presentation.base.BaseFragment
+import com.example.smartlabelling.presentation.ui.fragments.app_info.about_app.AboutAppViewModel
 
-class AppMainFragment : Fragment() {
+class AppMainFragment : BaseFragment<AppMainViewModel, FragmentAppMainBinding>(
+    R.layout.fragment_app_main
+) {
+    override val viewModel: AppMainViewModel by activityViewModels()
+    override val binding by viewBinding(FragmentAppMainBinding::bind)
 
-    companion object {
-        fun newInstance() = AppMainFragment()
+    override fun setupListeners() {
+        onProducerButtonClicked()
+        onUserButtonClicked()
     }
 
-    private lateinit var viewModel: AppMainViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_app_main, container, false)
+    private fun onUserButtonClicked() {
+        findNavController().navigate(
+            AppMainFragmentDirections.actionUserMainFragmentToProductScannerFragment()
+        )
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AppMainViewModel::class.java)
-        // TODO: Use the ViewModel
+    private fun onProducerButtonClicked() {
+    findNavController().navigate(
+        AppMainFragmentDirections.actionUserMainFragmentToProducerRegisterFragment()
+    )
     }
-
 }

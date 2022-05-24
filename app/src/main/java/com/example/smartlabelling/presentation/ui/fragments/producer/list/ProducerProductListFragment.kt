@@ -30,13 +30,8 @@ class ProducerProductListFragment : BaseFragment<ProducerProductListViewModel, F
         this::onItemClick,
         this::onAddNewClicked,
     )
-//    private val productsAdapter: ProductsAdapter by lazy {
-//        ProductsAdapter { id ->
-//            findNavController().navigate(ProducerProductListFragmentDirections.actionProducerProductListFragmentToUpdateProductCardFragment(id))
-//        }
-//    }
 
-    override fun initialize() {
+    override fun initialize() = with(binding) {
         setupListAdapter()
     }
 

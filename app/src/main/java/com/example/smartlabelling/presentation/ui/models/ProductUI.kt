@@ -9,12 +9,13 @@ data class ProductUI(
     val productionDate: String,
     val expiryDate: String,
     val manifacturerCountry: String,
-    val ingredients: String,
+    val ingredients: List<String>,
     val category: String,
     val packagingSize: Int,
     val seriesNumber: Int,
-    val nutritionDeclaration: NutritionDeclaration,
+    val nutritionDeclaration: NutritionDeclarationUI,
     val consumptionInfo: ConsumptionInfoUI,
+    val productImage: String
 ): IBaseDiffModel
 
 fun Product.toProductUI() = ProductUI(
@@ -28,5 +29,6 @@ fun Product.toProductUI() = ProductUI(
     packagingSize,
     seriesNumber,
     nutritionDeclaration.toNutritionDeclarationUI(),
-    consumptionInfo.toConsumptionInfoUI()
+    consumptionInfo.toConsumptionInfoUI(),
+    productImage,
 )

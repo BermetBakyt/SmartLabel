@@ -22,9 +22,6 @@
         android:name="com.example.smartlabelling.presentation.ui.fragments.user.scanning_fragment.ProductScannerFragment"
         android:label="fragment_product_scanner"
         tools:layout="@layout/fragment_product_scanner" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
         <action
             android:id="@+id/action_productScannerFragment_to_productDetailsFragment"
             app:destination="@id/productDetailsFragment" />
@@ -43,12 +40,12 @@
         android:name="com.example.smartlabelling.presentation.ui.fragments.user.product_detail.ProductDetailsFragment"
         android:label="fragment_product_details"
         tools:layout="@layout/fragment_product_details" >
-        <action
-            android:id="@+id/action_productDetailsFragment_to_userMainFragment"
-            app:destination="@id/userMainFragment" />
         <argument
             android:name="id"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_productDetailsFragment_to_productScannerFragment"
+            app:destination="@id/productScannerFragment" />
     </fragment>
     <fragment
         android:id="@+id/producerProductListFragment"

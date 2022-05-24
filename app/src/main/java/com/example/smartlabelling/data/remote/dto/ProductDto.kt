@@ -18,7 +18,7 @@ class ProductDto(
     @SerializedName("manifacturer_country")
     val manifacturerCountry: String,
     @SerializedName("ingredients")
-    val ingredients: String,
+    val ingredients: List<String>,
     @SerializedName("category")
     val category: String,
     @SerializedName("packaging_size")
@@ -29,6 +29,8 @@ class ProductDto(
     val nutritionDeclarationDto: NutritionDeclarationDto,
     @SerializedName("consumption_info")
     val consumptionInfo: ConsumptionInfoDto,
+    @SerializedName("product_image")
+    val productImage:String,
 )
 
 fun ProductDto.toProduct() = Product(
@@ -43,4 +45,5 @@ fun ProductDto.toProduct() = Product(
     seriesNumber,
     nutritionDeclarationDto.toNutritionDeclaration(),
     consumptionInfo.toConsumptionInfo(),
+    productImage
 )

@@ -16,5 +16,8 @@
     <string name="txt_or">или</string>
     <string name="txt_company_name_edit_text">Название компании</string>
     <string name="btn_sign_up">Зарегистрироваться</string>
+    <string name="dialog_product_name_hint"></string>
     <string name="btn_login_with_google">Войти через Google</string>
+    <string name="txt_about_app">  Приложение получения всей необходимой информации о продукте в электронном виде для дальнейшего уменьшения ипользования краски, бумаги и пластика на упаковке товаров. Посредством сканирования QR-кода на самом продукте потребитель получает информацию о продукте (дата произ-ва, состав продукта, предосторожности при употреблении(детям, беременным, аллергетикам итд. ),  nutrition declaration, страна производства).</string>
+    <string name="txt_privacy_policy">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
 </resources>

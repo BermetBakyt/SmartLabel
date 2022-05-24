@@ -10,7 +10,7 @@ class ProductRepositoryImpl @Inject constructor(
 ) : BaseRepository(), ProductRepository {
 
     override fun fetchProducts() = doRequest {
-       service.fetchProducts().results.map { it.toProduct()}
+       service.fetchProducts().results.map { it.toProduct() }
     }
 
     override fun fetchProduct(id: Int) = doRequest {

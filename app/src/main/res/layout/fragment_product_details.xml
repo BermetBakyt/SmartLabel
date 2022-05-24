@@ -332,7 +332,7 @@
             android:text="@string/btn_scan"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_product_detail"

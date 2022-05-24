@@ -12,7 +12,6 @@ import com.example.smartlabelling.presentation.ui.models.ProductUI
 class ProductsAdapter(
     val onItemClick: (id: Int) -> Unit,
     val onAddNewClicked: () -> Unit,
-    private val action: (id: Int) -> Unit
 ) : ListAdapter<ProductUI, ProductsAdapter.ProductViewHolder>(BaseDiffUtilCallback()) {
 
     inner class ProductViewHolder(
@@ -39,10 +38,6 @@ class ProductsAdapter(
                 itemProductName.text = item.productName
                 itemProductSeriesNumber.text = item.seriesNumber.toString()
                 imageItemProduct.load(imageItemProduct)
-            }
-
-            itemView.setOnClickListener{
-                action.invoke(item.id)
             }
         }
     }
