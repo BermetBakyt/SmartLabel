@@ -1,7 +1,7 @@
 package com.example.smartlabelling.presentation.di
 
-import com.example.smartlabelling.data.repository.ProductRepositoryImpl
-import com.example.smartlabelling.domain.repository.ProductRepository
+import com.example.data.repository.ProductRepositoryImpl
+import com.example.domain.repository.ProductRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoriesModule {
 
     @Binds
-    abstract fun bindCharacterRepository(repositoryImpl: ProductRepositoryImpl): ProductRepository
+    abstract fun bindCharacterRepository(repositoryImpl: com.example.data.repository.ProductRepositoryImpl): com.example.domain.repository.ProductRepository
 }

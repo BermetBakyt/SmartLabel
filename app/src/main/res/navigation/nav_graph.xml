@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/userMainFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.main_page.AppMainFragment"
+        android:name="com.example.smartlabelling.presentation.presentation.ui.fragments.main_page.AppMainFragment"
         android:label="fragment_user_main"
         tools:layout="@layout/fragment_app_main" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/productScannerFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.user.scanning_fragment.ProductScannerFragment"
+        android:name="com.example.smartlabelling.presentation.fragments.user.scanning_fragment.ProductScannerFragment"
         android:label="fragment_product_scanner"
         tools:layout="@layout/fragment_product_scanner" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/producerRegisterFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment"
+        android:name="com.example.smartlabelling.presentation.presentation.fragments.producer.producer_sign_in.ProducerSignInFragment"
         android:label="fragment_producer_register"
         tools:layout="@layout/fragment_producer_login" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/productDetailsFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.user.product_detail.ProductDetailsFragment"
+        android:name="com.example.smartlabelling.presentation.presentation.fragments.user.product_detail.ProductDetailsFragment"
         android:label="fragment_product_details"
         tools:layout="@layout/fragment_product_details" >
         <argument
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/producerProductListFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.list.ProducerProductListFragment"
+        android:name="com.example.smartlabelling.presentation.presentation.ui.fragments.producer.list.ProducerProductListFragment"
         android:label="fragment_producer_product_list"
         tools:layout="@layout/fragment_producer_product_list" >
         <action
@@ -61,12 +61,12 @@
     </fragment>
     <fragment
         android:id="@+id/addNewProductCardFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.add.AddNewProductCardFragment"
+        android:name="com.example.smartlabelling.presentation.presentation.ui.fragments.producer.add.AddNewProductCardFragment"
         android:label="fragment_add_new_product_card"
         tools:layout="@layout/fragment_add_new_product_card" />
     <fragment
         android:id="@+id/updateProductCardFragment"
-        android:name="com.example.smartlabelling.presentation.ui.fragments.producer.update.UpdateProductCardFragment"
+        android:name="com.example.smartlabelling.presentation.presentation.fragments.producer.update.UpdateProductCardFragment"
         android:label="fragment_update_product_card"
         tools:layout="@layout/fragment_update_product_card" >
         <argument

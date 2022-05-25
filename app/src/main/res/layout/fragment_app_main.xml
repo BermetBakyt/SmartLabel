@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.fragments.main_page.AppMainFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.presentation.ui.fragments.main_page.AppMainFragment">
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/greeting_tv"
         style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
         android:layout_width="wrap_content"
@@ -17,7 +18,7 @@
         android:textAlignment="center"
         android:text="Добро пожаловать в Smart Labelling!" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/choose_tv"
         style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
         android:layout_width="wrap_content"
@@ -29,7 +30,7 @@
         android:textAlignment="center"
         android:text="Выберите способ входа: " />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_user_in"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
@@ -39,9 +40,10 @@
         android:layout_marginTop="150dp"
         android:backgroundTint="@color/Black"
         android:textColor="@color/White"
+        app:cornerRadius="1dp"
         android:text="Пользователь" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_producer_in"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="wrap_content"
@@ -49,7 +51,8 @@
         android:layout_gravity="center"
         android:backgroundTint="@color/Black"
         android:text="Производитель"
-        android:textColor="@color/White"
+        android:textColor="@color/white"
+        app:cornerRadius="0dp"
         android:layout_marginTop="80dp"/>
 
 </FrameLayout>

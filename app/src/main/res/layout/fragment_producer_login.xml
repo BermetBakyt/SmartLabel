@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment">
+    tools:context=".presentation.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment">
 
     <com.google.android.material.button.MaterialButton
         app:rippleColor="@color/violet"
@@ -17,7 +17,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="230dp"
         android:textAlignment="center"
-        android:textColor="@color/grey"
+        android:textColor="@color/black"
         android:textSize="18sp"
         android:layout_marginTop="80dp"
         style="?android:attr/borderlessButtonStyle"/>
@@ -35,7 +35,7 @@
         android:backgroundTint="@color/Transparent"
         android:text="@string/txt_login_fr"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/grey"
         android:textSize="18sp" />
 
     <com.google.android.material.textfield.TextInputLayout

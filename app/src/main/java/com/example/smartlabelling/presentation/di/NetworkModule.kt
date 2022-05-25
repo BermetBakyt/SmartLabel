@@ -1,6 +1,6 @@
 package com.example.smartlabelling.presentation.di
 
-import com.example.smartlabelling.data.remote.RetrofitClient
+import com.example.data.remote.RetrofitClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +14,6 @@ object NetworkModule {
     @Singleton
     @Provides
     fun provideProductApiService(
-        networkClient: RetrofitClient
+        networkClient: com.example.data.remote.RetrofitClient
     ) = networkClient.provideproductApiService()
 }
