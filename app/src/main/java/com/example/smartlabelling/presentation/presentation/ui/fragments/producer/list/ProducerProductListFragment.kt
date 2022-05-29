@@ -15,12 +15,11 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProducerProductListFragment : BaseFragment<ProducerProductListViewModel, FragmentProducerProductListBinding>(
     R.layout.fragment_producer_product_list
 ) {
-    override val viewModel: com.example.smartlabelling.presentation.presentation.ui.fragments.producer.list.ProducerProductListViewModel by activityViewModels()
+    override val viewModel: ProducerProductListViewModel by activityViewModels()
     override val binding by viewBinding(FragmentProducerProductListBinding::bind)
 
     private val productsAdapter = ProductsAdapter(
         this::onItemClick,
-        this::onAddNewClicked,
     )
 
     override fun initialize() = with(binding) {
@@ -40,16 +39,19 @@ class ProducerProductListFragment : BaseFragment<ProducerProductListViewModel, F
         subscribeToProductsState()
     }
 
-    private fun onAddNewClicked() {
-        findNavController().navigate(
-            ProducerProductListFragmentDirections.actionProducerProductListFragmentToAddNewProductCardFragment()
-        )
+    override fun setupListeners() {
+        binding.addNewCardBtn.setOnClickListener{
+            findNavController().navigate(
+                ProducerProductListFragmentDirections.actionProducerProductListFragmentToAddNewProductCardFragment()
+            )
+        }
+
     }
 
     private fun onItemClick(id: Int) {
         findNavController().navigate(
             ProducerProductListFragmentDirections.actionProducerProductListFragmentToUpdateProductCardFragment(
-                id= id)
+                objectId = id.toString())
         )
     }
 
@@ -64,3 +66,4 @@ class ProducerProductListFragment : BaseFragment<ProducerProductListViewModel, F
         )
     }
 }
+

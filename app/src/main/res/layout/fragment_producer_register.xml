@@ -100,56 +100,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/txt_forgot_password_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_forgot_password"
-        android:layout_gravity="center"
-        android:layout_marginEnd="130dp"
-        android:layout_marginTop="110dp"
-        android:textSize="14sp"
-        android:textStyle="normal"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:textColor="@color/grey"/>
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_register"
+        style="@style/ThemeOverlay.Material3.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/black"
-        android:text="@string/btn_sign_up"
         android:layout_gravity="bottom"
-        android:padding="25dp"
-        android:textColor="@color/white"
-        android:textSize="18sp"
         android:layout_marginTop="80dp"
-        style="@style/ThemeOverlay.Material3.Button"/>
+        android:backgroundTint="@color/black"
+        android:padding="25dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="0dp"
+        android:text="@string/btn_sign_up"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_or"
-        android:layout_gravity="center"
-        android:layout_marginTop="140dp"
-        android:hint="@string/txt_email_edit_text"
-        android:textColor="@color/grey"
-        android:textAlignment="center"
-        android:textSize="18sp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_register_via_google_register"
-        android:layout_width="250dp"
-        app:rippleColor="@color/black"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/btn_login_with_google"
-        android:layout_marginTop="180dp"
-        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-        android:textColor="@color/black"
-        app:strokeColor="@color/black"
-        app:strokeWidth="2dp"
-        android:textSize="18sp"
-        app:icon="@drawable/ic_google"
-        app:iconGravity="start"
-        app:cornerRadius="0dp"/>
 </FrameLayout>

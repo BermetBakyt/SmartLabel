@@ -15,7 +15,7 @@ class ProductDetailsViewModel @Inject constructor(
     private val _productDetailState = MutableUIStateFlow<ProductUI>()
     val productDetailState = _productDetailState.asStateFlow()
 
-    fun fetchProductById(id: Int) {
-        fetchProductByIdUseCase(id).collectRequest(_productDetailState) { it.toProductUI() }
+    fun fetchProductById(objectId: String) {
+        fetchProductByIdUseCase(objectId).collectRequest(_productDetailState) { it.toProductUI() }
     }
 }

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -24,7 +25,6 @@ android {
 
         getByName("debug") {
             buildConfigField("String", "BASE_URL", "\"https://api.backendless.com/1B39F818-AF56-6C5A-FFCA-27A0DDF7B100/7DD99494-2B68-45F7-A929-C20DBC96C4D9\"")
-
         }
     }
     compileOptions {
@@ -59,4 +59,8 @@ dependencies {
 
     //Timber
     implementation "com.jakewharton.timber:timber:5.0.1"
+
+    //Room
+    implementation "androidx.room:room-runtime:2.4.2"
+    kapt "androidx.room:room-compiler:2.4.2"
 }

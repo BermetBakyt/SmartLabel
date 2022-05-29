@@ -4,14 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.example.smartlabelling.databinding.ItemRecyclerProductBinding
 import com.example.smartlabelling.presentation.presentation.base.BaseDiffUtilCallback
 import com.example.smartlabelling.presentation.presentation.models.ProductUI
 
 class ProductsAdapter(
     val onItemClick: (id: Int) -> Unit,
-    val onAddNewClicked: () -> Unit,
 ) : ListAdapter<ProductUI, ProductsAdapter.ProductViewHolder>(BaseDiffUtilCallback()) {
 
     inner class ProductViewHolder(
@@ -26,10 +24,6 @@ class ProductsAdapter(
                         onItemClick(id)
                     }
                 }
-
-                root.setOnClickListener {
-                    onAddNewClicked()
-                }
             }
         }
 
@@ -37,7 +31,6 @@ class ProductsAdapter(
             binding.apply {
                 itemProductName.text = item.productName
                 itemProductSeriesNumber.text = item.seriesNumber.toString()
-                imageItemProduct.load(imageItemProduct)
             }
         }
     }

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment">
+    tools:context="com.example.smartlabelling.presentation.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment">
 
     <com.google.android.material.button.MaterialButton
         app:rippleColor="@color/violet"
@@ -17,7 +17,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="230dp"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/grey"
         android:textSize="18sp"
         android:layout_marginTop="80dp"
         style="?android:attr/borderlessButtonStyle"/>
@@ -35,7 +35,7 @@
         android:backgroundTint="@color/Transparent"
         android:text="@string/txt_login_fr"
         android:textAlignment="center"
-        android:textColor="@color/grey"
+        android:textColor="@color/black"
         android:textSize="18sp" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -45,6 +45,27 @@
         app:boxStrokeColor="@color/black"
         android:layout_gravity="center"
         android:hint="@string/txt_company_name_edit_text"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_txt_company_name"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            android:inputType="text"
+            android:maxLength="13"
+            android:textColor="@color/grey" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        android:layout_gravity="center"
+        android:hint="@string/txt_layout_email"
+        android:layout_marginTop="55dp"
         style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -64,7 +85,7 @@
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/black"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:hint="@string/txt_email_edit_text"
         style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
 
@@ -79,19 +100,6 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/txt_forgot_password"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="130dp"
-        android:text="@string/txt_forgot_password"
-        android:textColor="@color/grey"
-        android:textSize="14sp"
-        android:textStyle="normal" />
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -102,34 +110,7 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         android:layout_marginTop="80dp"
+        android:insetBottom="0dp"
         style="@style/ThemeOverlay.Material3.Button"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_or"
-            android:layout_gravity="center"
-            android:layout_marginTop="140dp"
-            android:hint="@string/txt_email_edit_text"
-            android:textColor="@color/grey"
-            android:textAlignment="center"
-            android:textSize="18sp"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_register_via_google_login"
-        android:layout_width="250dp"
-        app:rippleColor="@color/black"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/btn_login_with_google"
-        android:layout_marginTop="180dp"
-        style="@style/Widget.Material3.Button.OutlinedButton.Icon"
-        android:textColor="@color/black"
-        app:strokeColor="@color/black"
-        app:strokeWidth="2dp"
-        android:textSize="18sp"
-        app:icon="@drawable/ic_google"
-        app:iconGravity="start"
-        app:cornerRadius="0dp"/>
 
 </FrameLayout>

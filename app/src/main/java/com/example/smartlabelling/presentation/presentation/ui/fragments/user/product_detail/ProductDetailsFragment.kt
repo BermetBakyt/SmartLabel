@@ -4,13 +4,11 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
-import coil.load
 import com.example.smartlabelling.R
 import com.example.smartlabelling.databinding.FragmentProductDetailsBinding
 import com.example.smartlabelling.presentation.presentation.base.BaseFragment
 import com.example.smartlabelling.presentation.presentation.extensions.showToastShort
-import com.example.smartlabelling.presentation.presentation.fragments.user.product_detail.ProductDetailsFragmentArgs
-import com.example.smartlabelling.presentation.presentation.fragments.user.product_detail.ProductDetailsFragmentDirections
+import com.example.smartlabelling.presentation.presentation.models.ProductUI
 
 class ProductDetailsFragment(
 ) : BaseFragment<ProductDetailsViewModel, FragmentProductDetailsBinding>(
@@ -30,7 +28,7 @@ class ProductDetailsFragment(
     }
 
     override fun setupRequests() {
-        viewModel.fetchProductById(args.id)
+        viewModel.fetchProductById(args.objectId)
     }
     override fun setupSubscribers() = with(binding){
         viewModel.productDetailState.collectUIState(
@@ -49,8 +47,8 @@ class ProductDetailsFragment(
                 tvConsumptionRestrictionsField.text = it.consumptionInfo.toString()
                 tvManifacturerCountryField.text = it.manifacturerCountry
                 tvSizeVolumeField.text = it.packagingSize.toString()
-                productImage.load(productImage)
             }
         )
+
     }
 }

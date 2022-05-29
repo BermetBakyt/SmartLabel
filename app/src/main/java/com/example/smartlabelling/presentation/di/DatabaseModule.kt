@@ -2,6 +2,9 @@ package com.example.smartlabelling.presentation.di
 
 import android.content.Context
 
+import com.example.data.local.RoomClient
+import com.example.data.local.UserDao
+
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +27,7 @@ import javax.inject.Singleton
 //
 //    @Singleton
 //    @Provides
-//    fun provideProductDao(
+//    fun provideUserDao(
 //        appDatabase: AppDatabase
-//    ): ProductDao = roomClient.provideProductDao(appDatabase)
+//    ): UserDao = roomClient.provideUserDao(appDatabase)
 //}

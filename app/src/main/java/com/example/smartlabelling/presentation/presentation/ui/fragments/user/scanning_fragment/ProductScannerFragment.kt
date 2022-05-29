@@ -1,17 +1,15 @@
 package com.example.smartlabelling.presentation.presentation.ui.fragments.user.scanning_fragment
 
-import android.net.Uri
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.budiyev.android.codescanner.CodeScanner
-import com.budiyev.android.codescanner.DecodeCallback
+import com.budiyev.android.codescanner.*
 import com.example.smartlabelling.R
 import com.example.smartlabelling.databinding.FragmentProductScannerBinding
-import com.example.smartlabelling.presentation.fragments.user.scanning_fragment.ProductScannerFragmentDirections
 import com.example.smartlabelling.presentation.presentation.base.BaseFragment
-import com.example.smartlabelling.presentation.presentation.extensions.showToastShort
+import com.example.smartlabelling.presentation.presentation.extensions.showToastLong
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class ProductScannerFragment(
@@ -24,15 +22,31 @@ class ProductScannerFragment(
     override val viewModel: ProductScannerViewModel by viewModels()
 
     override fun initialize() = with(binding) {
-        val activity = requireActivity()
-        codeScanner = CodeScanner(activity, scannerView)
-        codeScanner.decodeCallback = DecodeCallback {
-            activity.runOnUiThread {
-                showToastShort("$it")
+        codeScanner = CodeScanner(requireContext(), scannerView)
+        codeScanner.apply {
+            camera = CodeScanner.CAMERA_BACK
+            formats = CodeScanner.ALL_FORMATS
+            autoFocusMode = AutoFocusMode.SAFE
+            scanMode = ScanMode.SINGLE
+            isAutoFocusEnabled = true
+            isFlashEnabled = false
+
+            decodeCallback = DecodeCallback { code ->
+                code.text?.let {
+                    findNavController().navigate(
+                        ProductScannerFragmentDirections.actionProductScannerFragmentToProductDetailsFragment(it)
+                    )
+                }
             }
         }
+
+        codeScanner.errorCallback = ErrorCallback {
+            showToastLong("Camera initialization error: ${it.message}")
+        }
+
         scannerView.setOnClickListener {
             codeScanner.startPreview()
+
         }
     }
 
@@ -46,10 +60,4 @@ class ProductScannerFragment(
         super.onPause()
     }
 
-//    private fun onCodeScanned(id: Int) {
-//        var result =  { result ->
-//        findNavController().navigate(
-//            ProductScannerFragmentDirections.actionProductScannerFragmentToProductDetailsFragment(id)
-//        )
-//    }
 }

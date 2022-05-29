@@ -8,5 +8,9 @@ interface ProductRepository {
 
     fun fetchProducts(): Flow<Either<String, List<Product>>>
 
-    fun fetchProduct(id: Int) : Flow<Either<String, Product>>
+    fun fetchProduct(objectId: String) : Flow<Either<String, Product>>
+
+    fun updateProduct(objectId: String) :Flow<Either<String, Product>>
+
+    fun addNewProduct() :Flow<Either<String, Product>>
 }

@@ -6,5 +6,5 @@ import javax.inject.Inject
 class FetchProductByQRUseCase @Inject constructor(
     private val productRepository: ProductRepository
 ) {
-    operator fun invoke(id: Int) = productRepository.fetchProduct(id)
+    operator fun invoke(objectId: String) = productRepository.fetchProduct(objectId)
 }

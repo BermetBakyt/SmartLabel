@@ -22,14 +22,21 @@ class AppMainFragment : BaseFragment<BaseViewModel, FragmentAppMainBinding>(
     }
 
     private fun onUserButtonClicked() {
-        findNavController().navigate(
-            AppMainFragmentDirections.actionUserMainFragmentToProductScannerFragment()
-        )
+        binding.btnUserIn.setOnClickListener{
+            findNavController().navigate(
+                AppMainFragmentDirections.actionUserMainFragmentToProductScannerFragment()
+            )
+        }
     }
 
+
+
     private fun onProducerButtonClicked() {
-        findNavController().navigate(
-            AppMainFragmentDirections.actionUserMainFragmentToProducerRegisterFragment()
-        )
+        binding.btnProducerIn.setOnClickListener {
+            findNavController().navigate(
+                AppMainFragmentDirections.actionUserMainFragmentToProducerRegisterFragment()
+            )
+        }
+
     }
 }

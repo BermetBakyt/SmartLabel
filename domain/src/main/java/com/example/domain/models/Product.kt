@@ -2,6 +2,7 @@ package com.example.domain.models
 
 class Product(
     val id: Int,
+    val objectId: String,
     val productName: String,
     val productionDate: String,
     val expiryDate: String,

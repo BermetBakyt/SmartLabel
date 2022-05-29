@@ -25,6 +25,6 @@ class RetrofitClient @Inject constructor() {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun provideproductApiService(): ProductServiceApi = provideRetrofit
+    fun provideProductApiService(): ProductServiceApi = provideRetrofit
         .create(ProductServiceApi::class.java)
 }

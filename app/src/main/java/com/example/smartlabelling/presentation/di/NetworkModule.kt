@@ -15,5 +15,5 @@ object NetworkModule {
     @Provides
     fun provideProductApiService(
         networkClient: com.example.data.remote.RetrofitClient
-    ) = networkClient.provideproductApiService()
+    ) = networkClient.provideProductApiService()
 }

@@ -9,6 +9,8 @@ import com.google.gson.annotations.SerializedName
 class ProductDto(
     @SerializedName("id")
     val id: Int,
+    @SerializedName("objectId")
+    val objectId: String,
     @SerializedName("product_name")
     val productName: String,
     @SerializedName("production_date")
@@ -35,6 +37,7 @@ class ProductDto(
 
 fun ProductDto.toProduct() = Product(
     id,
+    objectId,
     productName,
     productionDate,
     expiryDate,

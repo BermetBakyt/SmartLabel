@@ -1,15 +1,21 @@
 package com.example.data.remote.services
 
 import ProductDto
-import com.example.data.remote.dto.ProductResponse
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface ProductServiceApi {
+
     @GET("data/product/{objectId}")
-    suspend fun fetchProduct(@Path("objectId") id: Int): ProductDto
+    suspend fun fetchProduct(@Path("objectId") objectId: String) : ProductDto
 
     @GET("data/product/")
-    suspend fun fetchProducts() : ProductResponse<ProductDto>
+    suspend fun fetchProducts() : List<ProductDto>
+
+    @POST("data/product/")
+    suspend fun updateProduct(@Path("objectId") objectId: String) : ProductDto
+
+    @POST("data/product/")
+    suspend fun addNewProduct() : ProductDto
 }
