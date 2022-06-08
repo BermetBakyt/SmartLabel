@@ -9,7 +9,7 @@ import com.example.smartlabelling.presentation.presentation.base.BaseDiffUtilCal
 import com.example.smartlabelling.presentation.presentation.models.ProductUI
 
 class ProductsAdapter(
-    val onItemClick: (id: Int) -> Unit,
+    val onItemClick: (objectId: String) -> Unit,
 ) : ListAdapter<ProductUI, ProductsAdapter.ProductViewHolder>(BaseDiffUtilCallback()) {
 
     inner class ProductViewHolder(
@@ -21,7 +21,7 @@ class ProductsAdapter(
 
                 root.setOnClickListener{
                     with(getItem(absoluteAdapterPosition)!!) {
-                        onItemClick(id)
+                        onItemClick(objectId)
                     }
                 }
             }

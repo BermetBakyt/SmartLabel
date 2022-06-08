@@ -1,14 +1,8 @@
-
-import com.example.data.remote.dto.ConsumptionInfoDto
-import com.example.data.remote.dto.NutritionDeclarationDto
-import com.example.data.remote.dto.toConsumptionInfo
-import com.example.data.remote.dto.toNutritionDeclaration
+package com.example.data.remote.dto
 import com.example.domain.models.Product
 import com.google.gson.annotations.SerializedName
 
-class ProductDto(
-    @SerializedName("id")
-    val id: Int,
+data class ProductDto(
     @SerializedName("objectId")
     val objectId: String,
     @SerializedName("product_name")
@@ -31,12 +25,9 @@ class ProductDto(
     val nutritionDeclarationDto: NutritionDeclarationDto,
     @SerializedName("consumption_info")
     val consumptionInfo: ConsumptionInfoDto,
-    @SerializedName("product_image")
-    val productImage:String,
 )
 
 fun ProductDto.toProduct() = Product(
-    id,
     objectId,
     productName,
     productionDate,
@@ -48,5 +39,4 @@ fun ProductDto.toProduct() = Product(
     seriesNumber,
     nutritionDeclarationDto.toNutritionDeclaration(),
     consumptionInfo.toConsumptionInfo(),
-    productImage
 )

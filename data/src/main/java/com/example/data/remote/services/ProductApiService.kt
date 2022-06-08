@@ -1,6 +1,6 @@
 package com.example.data.remote.services
 
-import ProductDto
+import com.example.data.remote.dto.ProductDto
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path

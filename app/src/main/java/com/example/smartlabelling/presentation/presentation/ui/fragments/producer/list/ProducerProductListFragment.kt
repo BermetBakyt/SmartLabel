@@ -48,10 +48,10 @@ class ProducerProductListFragment : BaseFragment<ProducerProductListViewModel, F
 
     }
 
-    private fun onItemClick(id: Int) {
+    private fun onItemClick(objectId: String) {
         findNavController().navigate(
             ProducerProductListFragmentDirections.actionProducerProductListFragmentToUpdateProductCardFragment(
-                objectId = id.toString())
+                objectId = objectId)
         )
     }
 

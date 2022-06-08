@@ -24,7 +24,7 @@ android {
         }
 
         getByName("debug") {
-            buildConfigField("String", "BASE_URL", "\"https://api.backendless.com/1B39F818-AF56-6C5A-FFCA-27A0DDF7B100/7DD99494-2B68-45F7-A929-C20DBC96C4D9\"")
+            buildConfigField("String", "BASE_URL", "\"https://api.backendless.com/1B39F818-AF56-6C5A-FFCA-27A0DDF7B100/7DD99494-2B68-45F7-A929-/\"")
         }
     }
     compileOptions {

@@ -1,11 +1,8 @@
 package com.example.data.repository
 
 import com.example.data.remote.services.ProductServiceApi
-import com.example.domain.Either
-import com.example.domain.models.Product
 import com.example.domain.repository.ProductRepository
-import kotlinx.coroutines.flow.Flow
-import toProduct
+import com.example.data.remote.dto.toProduct
 import javax.inject.Inject
 
 class ProductRepositoryImpl @Inject constructor(

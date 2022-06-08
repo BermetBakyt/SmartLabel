@@ -1,93 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.smartlabelling.presentation.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment">
 
     <com.google.android.material.button.MaterialButton
-        app:rippleColor="@color/violet"
         android:id="@+id/btn_enter_register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/Transparent"
-        android:text="@string/txt_register_fr"
-        android:layout_gravity="center|right"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="230dp"
-        android:textAlignment="center"
-        android:textColor="@color/grey"
-        android:textSize="18sp"
-        android:layout_marginTop="80dp"
-        style="?android:attr/borderlessButtonStyle"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_enter_login"
-        app:rippleColor="@color/violet"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|left"
-        android:layout_marginTop="80dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginBottom="230dp"
+        android:layout_marginTop="172dp"
+        android:backgroundTint="@color/Transparent"
+        android:text="@string/txt_register_fr"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/violet" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_enter_login"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="172dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/Transparent"
         android:text="@string/txt_login_fr"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/violet"
+        tools:layout_editor_absoluteY="172dp" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/company_name_layout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/txt_company_name_edit_text"
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/black"
-        android:layout_gravity="center"
-        android:hint="@string/txt_company_name_edit_text"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_enter_login">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_txt_company_name"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:backgroundTint="@color/white"
             android:inputType="text"
             android:maxLength="13"
-            android:textColor="@color/grey" />
+            android:textColor="@color/grey"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="274dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_layout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/txt_layout_email"
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/black"
-        android:layout_gravity="center"
-        android:hint="@string/txt_layout_email"
-        android:layout_marginTop="55dp"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/company_name_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_txt_email_login"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
             android:backgroundTint="@color/white"
             android:inputType="text"
             android:maxLength="13"
-            android:textColor="@color/grey" />
+            android:textColor="@color/grey"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="355dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/txt_email_edit_text"
         android:textColorHint="@color/black"
         app:boxStrokeColor="@color/black"
-        android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:hint="@string/txt_email_edit_text"
-        style="@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_txt_password_login"
@@ -96,21 +108,23 @@
             android:backgroundTint="@color/white"
             android:inputType="text"
             android:maxLength="13"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="15dp"
+            tools:layout_editor_absoluteY="423dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
+        style="@style/ThemeOverlay.Material3.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
-        android:text="@string/btn_login"
-        android:layout_gravity="bottom"
+        android:insetBottom="0dp"
         android:padding="25dp"
+        android:text="@string/btn_login"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:layout_marginTop="80dp"
-        android:insetBottom="0dp"
-        style="@style/ThemeOverlay.Material3.Button"/>
-
-</FrameLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

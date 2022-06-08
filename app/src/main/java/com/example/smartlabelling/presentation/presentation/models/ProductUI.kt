@@ -3,8 +3,7 @@ package com.example.smartlabelling.presentation.presentation.models
 import com.example.smartlabelling.presentation.presentation.base.IBaseDiffModel
 
 data class ProductUI(
-    override val id: Int,
-    val objectId: String,
+    override val objectId: String,
     var productName: String,
     var productionDate: String,
     var expiryDate: String,
@@ -15,11 +14,9 @@ data class ProductUI(
     val seriesNumber: Int,
     val nutritionDeclaration: NutritionDeclarationUI,
     var consumptionInfo: ConsumptionInfoUI,
-    val productImage: String
 ): IBaseDiffModel
 
 fun com.example.domain.models.Product.toProductUI() = ProductUI(
-    id,
     objectId,
     productName,
     productionDate,
@@ -31,5 +28,4 @@ fun com.example.domain.models.Product.toProductUI() = ProductUI(
     seriesNumber,
     nutritionDeclaration.toNutritionDeclarationUI(),
     consumptionInfo.toConsumptionInfoUI(),
-    productImage,
 )

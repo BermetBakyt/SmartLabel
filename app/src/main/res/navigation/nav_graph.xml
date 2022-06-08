@@ -46,7 +46,7 @@
         android:id="@+id/producerLoginFragment"
         android:name="com.example.smartlabelling.presentation.presentation.ui.fragments.producer.producer_sign_in.ProducerSignInFragment"
         android:label="fragment_producer_login"
-        tools:layout="@layout/fragment_producer_login" >
+        tools:layout="@layout/fragment_producer_login">
         <action
             android:id="@+id/action_producerLoginFragment_to_producerProductListFragment"
             app:destination="@id/producerProductListFragment" />

@@ -1,5 +1,9 @@
 package com.example.smartlabelling.presentation.presentation.ui.fragments.main_page
 
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -22,14 +26,38 @@ class AppMainFragment : BaseFragment<BaseViewModel, FragmentAppMainBinding>(
     }
 
     private fun onUserButtonClicked() {
-        binding.btnUserIn.setOnClickListener{
-            findNavController().navigate(
-                AppMainFragmentDirections.actionUserMainFragmentToProductScannerFragment()
-            )
+        val requestPermissionLauncher = registerForActivityResult(
+            ActivityResultContracts.RequestPermission()
+        ) { isGranted: Boolean ->
+            if (isGranted) {
+                findNavController().navigate(
+                    AppMainFragmentDirections.actionUserMainFragmentToProductScannerFragment()
+                )
+            }
+
+        }
+        when {
+            ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED -> {
+                binding.btnUserIn.setOnClickListener {
+                    findNavController().navigate(
+                        AppMainFragmentDirections.actionUserMainFragmentToProductScannerFragment()
+                    )
+                }
+            }
+
+            shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) -> {
+
+            }
+            else -> {
+                requestPermissionLauncher.launch(
+                    Manifest.permission.CAMERA
+                )
+            }
         }
     }
-
-
 
     private fun onProducerButtonClicked() {
         binding.btnProducerIn.setOnClickListener {
@@ -37,6 +65,5 @@ class AppMainFragment : BaseFragment<BaseViewModel, FragmentAppMainBinding>(
                 AppMainFragmentDirections.actionUserMainFragmentToProducerRegisterFragment()
             )
         }
-
     }
 }

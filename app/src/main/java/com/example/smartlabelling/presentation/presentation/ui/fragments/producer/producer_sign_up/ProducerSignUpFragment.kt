@@ -16,14 +16,12 @@ class ProducerSignUpFragment :
     override val viewModel: ProducerSignUpViewModel by viewModels()
 
     override fun setupListeners() = with(binding) {
-
-//        btnRegister.setOnClickListener {
-//            if(editTxtEmailRegister.setText() || editTxtPasswordRegister.setText()) {
-//                findNavController().navigate(
-//                    ProducerSignUpFragmentDirections.actionProducerSignUpFragmentToProducerProductListFragment()
-//                )
-//            }
-//        }
+            btnRegister.setOnClickListener {
+            //if (editTxtEmailRegister.setText() || editTxtPasswordRegister.setText()) {
+            findNavController().navigate(
+                ProducerSignUpFragmentDirections.actionProducerSignUpFragmentToProducerProductListFragment()
+            )
+        }
 
         btnEnterLogin.setOnClickListener {
             findNavController().navigate(
@@ -32,3 +30,5 @@ class ProducerSignUpFragment :
         }
     }
 }
+
+
